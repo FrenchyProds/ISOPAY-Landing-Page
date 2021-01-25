@@ -1,3 +1,7 @@
+/* ============================= */
+/* == IMPORTATION DES POLICES == */
+/* ============================= */
+
 @font-face {
     font-family: 'Montserrat-Regular';
     src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format('truetype');
@@ -18,6 +22,12 @@
     src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf");
 }
 
+
+/* ================================ */
+/* == PAGE CODEE EN MOBILE-FIRST == */
+/* ================================ */
+
+
 body {
     font-family: "Montserrat-Regular", sans-serif;
     text-align: center;
@@ -25,7 +35,11 @@ body {
     color: white;
 }
 
-body::before {
+
+/* ======================== */
+/* ===== ARRIERE-PLAN ===== */
+/* ======================== */
+body::before {          
     content: '';
     position: fixed;
     z-index: -1;
@@ -38,7 +52,11 @@ body::before {
     background-repeat: no-repeat;
 }
 
-main {
+
+/* =========================== */
+/* ===== AFFICHAGE GRIDS ===== */
+/* =========================== */
+main {              
     display: grid;
     grid-template-columns: 0.5fr 12fr 0.5fr;
     grid-template-rows: auto;
@@ -58,7 +76,11 @@ main {
     width: fit-content
 }
 
-.title {
+
+/* =================== */
+/* ===== TITRAGE ===== */
+/* =================== */
+.title {                
     font-size: clamp(14px, 18px, 48px);
     font-family: 'Montserrat-Light', sans-serif;
     line-height: 1.3;
@@ -67,7 +89,10 @@ main {
 }
 
 
-.login {
+/* =================================== */
+/* ===== FORMULAIRE DE CONNEXION ===== */
+/* =================================== */
+.login {                
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -98,7 +123,11 @@ label {
     font-family: 'Montserrat-Medium', sans-serif;
 }
 
-.preview_icon {
+
+/* ========================================== */
+/* ===== ICONE AFFICHER LE MOT DE PASSE ===== */
+/* ========================================== */
+.preview_icon {             
     text-align: right;
     display: flex;
     position: relative;
@@ -111,7 +140,6 @@ label {
     height: 1.95rem;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    /* right: 2vw; */
     padding: 0.2rem;
     width: 5%;
   }
@@ -120,17 +148,21 @@ label {
     color: green;
 }
 
+.fa-eye:hover {
+    background-color: lightgreen;
+    border-radius: 50%;
+}
+
 .fa-eye-slash {
     color: red;
 }
 
-.preview_icon:hover {
-    text-decoration: none;
-    color: green;
-  }
+.fa-eye-slash:hover {
+    background-color: lightpink;
+    border-radius: 50%;
+}
 
 .password_input {
-    /* width: 100%; */
     height: 5vh;
 }
 
@@ -139,13 +171,21 @@ a {
     color: inherit
 }
 
-.row {
+
+/* ==================================================== */
+/* ===== RANGEE SE SOUVENIR DE MOI + SE CONNECTER ===== */
+/* ==================================================== */
+.row {      
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.rememberMe {
+
+/* ==================================================== */
+/* ===== DIV AVEC L'INPUT CHECKBOX + LE LABEL ========= */
+/* ==================================================== */
+.rememberMe {       
     display: flex;
     margin-bottom: 1rem;
     justify-content: center;
@@ -171,7 +211,11 @@ input[type=submit] {
     top: -4vh;
 }
 
-@media(min-width: 768px) {
+
+/* =============================================== */
+/* ===== AFFICHAGE 768px et plus (tablettes) ===== */
+/* =============================================== */
+@media(min-width: 768px) {     
     .container {
         grid-template-columns: 5fr 3fr 1fr;
     }
@@ -192,7 +236,11 @@ input[type=submit] {
     }
 }
 
-@media(min-width: 1024px) {
+
+/* ===================================================== */
+/* ===== AFFICHAGE 1024px et plus (petits laptops) ===== */
+/* ===================================================== */
+@media(min-width: 1024px) {         
     .container {
         grid-template-columns: 2.5fr 2fr 1fr;
     }
@@ -212,13 +260,21 @@ input[type=submit] {
     }
 }
 
-@media(max-width: 1339px) {
+
+/* ===================================== */
+/* ===== AFFICHAGE 1339px et moins ===== */
+/* ===================================== */
+@media(max-width: 1439px) {         
     input[type=checkbox] {
         margin-top: 2.4px;
     }
 }
 
-@media(min-width: 1440px) {
+
+/* ========================================================================== */
+/* ====== AFFICHAGE 1440px et plus (grands laptops + écrans de bureau) ====== */
+/* ========================================================================== */
+@media(min-width: 1440px) {         
     .title {
         font-size: 32px;
     }
@@ -239,7 +295,11 @@ input[type=submit] {
     }
 }
 
-@media(min-width: 2560px) {
+
+/* ==================================== */
+/* ===== AFFICHAGE 2560px et plus ===== */
+/* ==================================== */
+@media(min-width: 2560px) {             
     .title {
         font-size: 3rem;
     }
