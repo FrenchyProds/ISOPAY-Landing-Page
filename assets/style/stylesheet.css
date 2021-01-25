@@ -59,9 +59,11 @@ main {
 }
 
 .title {
-    font-size: clamp(14px, 24px, 48px);
+    font-size: clamp(14px, 18px, 48px);
     font-family: 'Montserrat-Light', sans-serif;
     line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 2rem;
 }
 
 
@@ -224,8 +226,8 @@ input[type=submit] {
         font-size: 22px;
     }
     input[type="text"], input[type="password"] {
-        font-size: 2rem;
-        height: 7vh;
+        font-size: 1.4rem;
+        height: 5vh;
     }
     input[type=submit] {
         top: -2vh;
