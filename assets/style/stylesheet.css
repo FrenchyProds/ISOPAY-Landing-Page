@@ -13,6 +13,11 @@
     src: url("../fonts/Montserrat/Montserrat-Light.ttf") format('truetype');
 }
 
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf");
+}
+
 body {
     font-family: "Montserrat-Regular", sans-serif;
     text-align: center;
@@ -132,9 +137,29 @@ a {
     color: inherit
 }
 
+.row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.rememberMe {
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+.rememberMe label {
+    font-family: 'Montserrat-SemiBold', sans-serif;
+}
+
+input[type=checkbox] {
+    margin-right: 0.3rem;
+}
+
 input[type=submit] {
     background-color: #42A62A;
-    border-radius: 5%;
+    border-radius: 5px;
     border-width: 0px;
     padding: 0.6rem;
     color: white;
@@ -157,8 +182,11 @@ input[type=submit] {
     .login {
         margin: 0;  
     }
-    input[type=submit] {
-        align-self: flex-end;
+    .row {
+        text-align: left;
+    }
+    .rememberMe {
+        justify-content: flex-start;
     }
 }
 
@@ -175,6 +203,16 @@ input[type=submit] {
     .preview_icon {
         left: 90%;
         font-size: 1.2rem;
+    }
+    .row {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media(max-width: 1339px) {
+    input[type=checkbox] {
+        margin-top: 2.4px;
     }
 }
 

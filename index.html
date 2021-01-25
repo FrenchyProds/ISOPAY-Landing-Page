@@ -16,9 +16,8 @@
     <body>
         <main class="container">
             <section class="heading">
-                <img src="./assets/logo.png" class="logo" alt="logo d'ISOCEL">
-                <p class="title">Bienvenue sur votre portail de paiement en ligne <br/>
-                Boucle Locale Radio ISOCEL</p>
+                <img src="./assets/logo_new.png" class="logo" alt="logo d'ISOCEL">
+                <p class="title">Bienvenue sur votre portail de réabonnement en ligne
             </section>
             <form class="login">
                 <label for="username">
@@ -32,7 +31,15 @@
                             <i class="fas fa-eye"></i>
                         </a>
                 </label>
-                <input name="submit" value="Se connecter" type="submit">
+                <div class="row">
+                    <div class="rememberMe">
+                        <input type="checkbox" name="remember-me" value="remember-me">
+                        <label for="remember-me">Se souvenir de moi</label>
+                    </div>
+                    <div class="submitBtn">
+                        <input name="submit" value="Se connecter" type="submit">
+                    </div>
+                </div>
             </form>
         </main>
         <script src="./assets/scripts/password.js" async defer></script>

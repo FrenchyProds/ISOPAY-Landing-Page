@@ -19,7 +19,6 @@ function togglePassword () {
     eyeIcon.classList.add('fa-eye')
     eyeIcon.classList.remove('fa-eye-slash')
   } 
-//   console.log(passwordField.type);
 }
 
 passwordIcon.addEventListener('click', togglePassword);
