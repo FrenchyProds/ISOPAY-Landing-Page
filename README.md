@@ -1,3 +1,3 @@
 # ISOPAY-Landing-Page
 
-![](GIFme.mp4)
+![Isopay Landing Page GIF](GIFme.gif)
