@@ -256,6 +256,15 @@ a {
     cursor: pointer;
 }
 
+.rememberMe input:hover {
+    cursor: pointer;
+}
+
+.rememberMe label:hover {
+    cursor: pointer;
+    animation: neon 2.5s ease-in-out;
+}
+
 .rememberMe label {
     font-family: 'Montserrat-SemiBold', sans-serif;
 }
@@ -309,6 +318,13 @@ input[type="submit"]:hover {
     }
     .rememberMe {
         justify-content: flex-start;
+        padding-right: 1rem;
+    }
+    .forgotten-password {
+        margin: 0;
+    }
+    .preview_icon {
+        top: -4.75vh;
     }
     .forgotten-password {
         margin: 0;
