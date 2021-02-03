@@ -64,7 +64,8 @@ main {
     ". . ."
     ". heading . "
     ". form ."
-    '. . .';
+    ". forgot-password ."
+    ". . .";
 }
 
 .heading {
@@ -110,10 +111,23 @@ input {
     font-family: 'Montserrat-Regular', sans-serif;
     font-size: 0.9rem;
     padding: 0.2rem 0 0.2rem 0.5rem;
+    outline: none;
+    border: 3px solid transparent;
+    transition: 0.3s ease-in-out;
 }
 
-input[type=text] {
-    height: 5vh;
+input:hover{
+    border-color: #8cdee4 #8cdee4 #8cdee4 #8cdee4;
+    transition: 0.3s ease-in-out;
+}
+input[type=text]:focus, input[type=password]:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 3px solid rgba(81, 203, 238, 1);
+    transition: 0.2s ease-in-out;
+  }
+
+input[type=text], input[type=password] {
+    height: 3vh;
 }
 
 label {
@@ -123,25 +137,54 @@ label {
     font-family: 'Montserrat-Medium', sans-serif;
 }
 
+.forgotten-password {
+    grid-area: forgot-password;
+    text-align: left;
+    position: relative;
+    top: -2vh;
+    font-family: 'Montserrat-SemiBold', sans-serif;
+    color: white;
+    max-width: fit-content;
+    justify-content: center;
+    padding:  0.2rem;
+    font-size: 0.9rem;
+    transition: 0.3s ease-in-out;
+}
+
+.forgotten-password a {
+    margin: 0;
+}
+
+.forgotten-password p {
+    margin: 0;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.forgotten-password:hover {
+    color: #5fd542;
+    transition: 0.3s ease-in-out;
+    /* background-color: rgba(0,0,0,0.4); */
+    border-radius: 5px;
+}
+
+
 
 /* ========================================== */
 /* ===== ICONE AFFICHER LE MOT DE PASSE ===== */
 /* ========================================== */
+.password_reveal a i::before {
+    align-content: end;
+}
+
 .preview_icon {             
-    text-align: right;
-    display: flex;
     position: relative;
-    justify-content: center;
-    align-items: center;
     text-decoration:none;
     flex: 1%;
-    top: -37%;
-    left: 87%;
-    height: 1.95rem;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    top: -4.7vh;
     padding: 0.2rem;
-    width: 5%;
+    padding-right: 0.6rem;
+    align-self: flex-end;
   }
 
 .fa-eye {
@@ -166,6 +209,11 @@ label {
     height: 5vh;
 }
 
+.password_reveal {
+    display: flex;
+    flex-direction: column;
+}
+
 a {
     text-decoration: none;
     color: inherit
@@ -179,6 +227,7 @@ a {
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
 }
 
 
@@ -187,8 +236,24 @@ a {
 /* ==================================================== */
 .rememberMe {       
     display: flex;
-    margin-bottom: 1rem;
     justify-content: center;
+    padding-right: 0.3rem;
+    max-width: fit-content;
+}
+
+.rememberMe:hover {
+    transition: 0.3s ease-in-out;
+    color: #5fd542;
+    border-radius: 5px;
+    /* background-color: rgba(0,0,0,0.4); */
+}
+
+.rememberMe input:hover {
+    cursor: pointer;
+}
+
+.rememberMe label:hover {
+    cursor: pointer;
 }
 
 .rememberMe label {
@@ -203,12 +268,22 @@ input[type=submit] {
     background-color: #42A62A;
     border-radius: 5px;
     border-width: 0px;
-    padding: 0.6rem;
+    padding: 0.3rem;
     color: white;
     font-size: clamp(18px, 18px, 36px);
     font-family: 'Montserrat-Regular', sans-serif;
     position: relative;
-    top: -4vh;
+    transition: 0.5s;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background: white;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #42A62A;
+    font-weight: 800;
 }
 
 
@@ -217,7 +292,7 @@ input[type=submit] {
 /* =============================================== */
 @media(min-width: 768px) {     
     .container {
-        grid-template-columns: 5fr 3fr 1fr;
+        grid-template-columns: 5fr 2fr 1fr;
     }
     body {
         text-align: left;
@@ -230,9 +305,16 @@ input[type=submit] {
     }
     .row {
         text-align: left;
+        align-items: flex-start;
     }
     .rememberMe {
         justify-content: flex-start;
+    }
+    .forgotten-password {
+        margin: 0;
+    }
+    .preview_icon {
+        top: -4.75vh;
     }
 }
 
@@ -242,21 +324,36 @@ input[type=submit] {
 /* ===================================================== */
 @media(min-width: 1024px) {         
     .container {
-        grid-template-columns: 2.5fr 2fr 1fr;
+        grid-template-columns: 2.5fr 1.5fr 1fr;
     }
     .logo {
         width: 15vw;
     }
+    input[type="text"], input[type="password"] {
+        height: 4vh;
+    }
     input[type=submit] {
-        top: -3vh;
+        font-size: 16px;
+        margin: 0;
     }
     .preview_icon {
-        left: 90%;
+        top: -5.3vh;
         font-size: 1.2rem;
     }
     .row {
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+    }
+    .forgotten-password {
+        text-align: left;
+    }
+    .rememberMe {
+        margin: 0;
+    }
+    .rememberMe label {
+        font-size: 0.9rem;
+        margin: 0;
     }
 }
 
@@ -282,16 +379,17 @@ input[type=submit] {
         font-size: 22px;
     }
     input[type="text"], input[type="password"] {
-        font-size: 1.4rem;
-        height: 5vh;
+        font-size: 1.2rem;
     }
     input[type=submit] {
-        top: -2vh;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
+        padding: 0.4rem;
     }
     .preview_icon {
-        left: 90%;
         font-size: 1.8rem;
+    }
+    .rememberMe label {
+        font-size: 1.3rem;
     }
 }
 
@@ -312,14 +410,28 @@ input[type=submit] {
     input {
         margin-top: 1rem;
     }
+    input[type="text"], input[type="password"] {
+        font-size: 1.8rem;
+    }
     input[type=submit] {
-        top: -2vh;
         font-size: 2.5rem;
         padding: 1rem 1rem;
     }
     .preview_icon {
-        left: 90%;
         font-size: 2.5rem;
-        top: -35%;
+        top: -4.4vh;
+    }
+    .forgotten-password p {
+        font-size: 1.5rem;
+    }
+    .rememberMe {
+        align-items: center;
+    }
+    .rememberMe label {
+        font-size: 2rem;
+        margin: 0 0.5rem;
+    }
+    .rememberMe input {
+        margin: 0 0.5rem;
     }
 }
